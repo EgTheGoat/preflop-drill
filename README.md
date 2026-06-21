@@ -67,6 +67,18 @@ src/
     └── range.ts    # Range / Action / Position 型定義
 ```
 
+## インストール（PWA）
+
+ブラウザからホーム画面に追加することで、アプリとして使える。
+
+| ブラウザ | 手順 |
+|---|---|
+| iOS Safari | 共有ボタン →「ホーム画面に追加」 |
+| Android Chrome | メニュー →「アプリをインストール」 |
+| Desktop Chrome | アドレスバー右端のインストールアイコン |
+
+インストール後はオフラインでも動作する。
+
 ## Contributing
 
 バグ報告・機能提案は [Issues](https://github.com/EgTheGoat/preflop-drill/issues) へ。  
