@@ -1,0 +1,23 @@
+{
+  "id": "9max_100bb_rfi_utg2",
+  "label": "UTG+2 オープン (RFI)",
+  "format": "9-max 100bb",
+  "position": "UTG2",
+  "scenario": "RFI",
+  "actions": ["fold", "raise"],
+  "hands": {
+    "AA": { "raise": 1 }, "KK": { "raise": 1 }, "QQ": { "raise": 1 }, "JJ": { "raise": 1 },
+    "TT": { "raise": 1 }, "99": { "raise": 1 }, "88": { "raise": 1 }, "77": { "raise": 0.5, "fold": 0.5 },
+
+    "AKs": { "raise": 1 }, "AQs": { "raise": 1 }, "AJs": { "raise": 1 }, "ATs": { "raise": 1 },
+    "A9s": { "raise": 1 }, "A8s": { "raise": 0.5, "fold": 0.5 },
+    "A5s": { "raise": 0.5, "fold": 0.5 }, "A4s": { "raise": 0.5, "fold": 0.5 },
+    "KQs": { "raise": 1 }, "KJs": { "raise": 1 }, "KTs": { "raise": 1 }, "K9s": { "raise": 0.5, "fold": 0.5 },
+    "QJs": { "raise": 1 }, "QTs": { "raise": 1 }, "Q9s": { "raise": 0.5, "fold": 0.5 },
+    "JTs": { "raise": 1 }, "J9s": { "raise": 0.5, "fold": 0.5 },
+    "T9s": { "raise": 0.5, "fold": 0.5 }, "98s": { "raise": 0.5, "fold": 0.5 },
+
+    "AKo": { "raise": 1 }, "AQo": { "raise": 1 }, "AJo": { "raise": 1 }, "ATo": { "raise": 0.5, "fold": 0.5 },
+    "KQo": { "raise": 1 }, "KJo": { "raise": 0.5, "fold": 0.5 }
+  }
+}

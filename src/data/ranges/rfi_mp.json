@@ -1,0 +1,25 @@
+{
+  "id": "6max_100bb_rfi_mp",
+  "label": "MP オープン (RFI)",
+  "format": "6-max 100bb",
+  "position": "MP",
+  "scenario": "RFI",
+  "actions": ["fold", "raise"],
+  "hands": {
+    "AA": { "raise": 1 }, "KK": { "raise": 1 }, "QQ": { "raise": 1 },
+    "JJ": { "raise": 1 }, "TT": { "raise": 1 }, "99": { "raise": 1 },
+    "88": { "raise": 1 }, "77": { "raise": 1 }, "66": { "raise": 1 }, "55": { "raise": 1 },
+    "44": { "raise": 0.5, "fold": 0.5 }, "33": { "raise": 0.5, "fold": 0.5 },
+
+    "AKs": { "raise": 1 }, "AQs": { "raise": 1 }, "AJs": { "raise": 1 }, "ATs": { "raise": 1 },
+    "A9s": { "raise": 1 }, "A5s": { "raise": 1 }, "A4s": { "raise": 1 },
+    "A3s": { "raise": 0.5, "fold": 0.5 }, "A2s": { "raise": 0.5, "fold": 0.5 },
+    "KQs": { "raise": 1 }, "KJs": { "raise": 1 }, "KTs": { "raise": 1 }, "K9s": { "raise": 0.5, "fold": 0.5 },
+    "QJs": { "raise": 1 }, "QTs": { "raise": 1 }, "Q9s": { "raise": 0.5, "fold": 0.5 },
+    "JTs": { "raise": 1 }, "J9s": { "raise": 0.5, "fold": 0.5 },
+    "T9s": { "raise": 1 }, "98s": { "raise": 1 }, "87s": { "raise": 0.5, "fold": 0.5 },
+
+    "AKo": { "raise": 1 }, "AQo": { "raise": 1 }, "AJo": { "raise": 1 }, "ATo": { "raise": 0.5, "fold": 0.5 },
+    "KQo": { "raise": 1 }, "KJo": { "raise": 0.5, "fold": 0.5 }, "QJo": { "raise": 0.5, "fold": 0.5 }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "9max_100bb_rfi_hj",
+  "label": "HJ オープン (RFI)",
+  "format": "9-max 100bb",
+  "position": "HJ",
+  "scenario": "RFI",
+  "actions": ["fold", "raise"],
+  "hands": {
+    "AA": { "raise": 1 }, "KK": { "raise": 1 }, "QQ": { "raise": 1 }, "JJ": { "raise": 1 },
+    "TT": { "raise": 1 }, "99": { "raise": 1 }, "88": { "raise": 1 }, "77": { "raise": 1 },
+    "66": { "raise": 1 }, "55": { "raise": 0.5, "fold": 0.5 },
+
+    "AKs": { "raise": 1 }, "AQs": { "raise": 1 }, "AJs": { "raise": 1 }, "ATs": { "raise": 1 },
+    "A9s": { "raise": 1 }, "A8s": { "raise": 1 }, "A7s": { "raise": 1 },
+    "A6s": { "raise": 1 }, "A5s": { "raise": 1 },
+    "A4s": { "raise": 0.5, "fold": 0.5 }, "A3s": { "raise": 0.5, "fold": 0.5 }, "A2s": { "raise": 0.5, "fold": 0.5 },
+    "KQs": { "raise": 1 }, "KJs": { "raise": 1 }, "KTs": { "raise": 1 }, "K9s": { "raise": 1 },
+    "K8s": { "raise": 1 }, "K7s": { "raise": 0.5, "fold": 0.5 },
+    "QJs": { "raise": 1 }, "QTs": { "raise": 1 }, "Q9s": { "raise": 1 }, "Q8s": { "raise": 1 },
+    "Q7s": { "raise": 0.5, "fold": 0.5 },
+    "JTs": { "raise": 1 }, "J9s": { "raise": 1 }, "J8s": { "raise": 1 }, "J7s": { "raise": 0.5, "fold": 0.5 },
+    "T9s": { "raise": 1 }, "T8s": { "raise": 1 }, "T7s": { "raise": 0.5, "fold": 0.5 },
+    "98s": { "raise": 1 }, "97s": { "raise": 1 }, "96s": { "raise": 0.5, "fold": 0.5 },
+    "87s": { "raise": 1 }, "86s": { "raise": 0.5, "fold": 0.5 },
+    "76s": { "raise": 1 }, "75s": { "raise": 0.5, "fold": 0.5 },
+
+    "AKo": { "raise": 1 }, "AQo": { "raise": 1 }, "AJo": { "raise": 1 }, "ATo": { "raise": 1 },
+    "A9o": { "raise": 1 }, "A8o": { "raise": 0.5, "fold": 0.5 },
+    "KQo": { "raise": 1 }, "KJo": { "raise": 1 }, "KTo": { "raise": 1 }, "K9o": { "raise": 0.5, "fold": 0.5 },
+    "QJo": { "raise": 1 }, "QTo": { "raise": 1 }, "Q9o": { "raise": 0.5, "fold": 0.5 },
+    "JTo": { "raise": 1 }, "J9o": { "raise": 0.5, "fold": 0.5 },
+    "T9o": { "raise": 0.5, "fold": 0.5 }
+  }
+}

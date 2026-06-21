@@ -1,0 +1,20 @@
+{
+  "name": "プリフロップトレーナー",
+  "short_name": "プリフロップトレーナー",
+  "description": "世界のヨコサワのレンジでプリフロップを反復練習（GTOレンジにも切替可）",
+  "lang": "ja",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1b24",
+  "theme_color": "#0f1b24",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

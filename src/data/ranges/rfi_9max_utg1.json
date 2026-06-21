@@ -1,0 +1,21 @@
+{
+  "id": "9max_100bb_rfi_utg1",
+  "label": "UTG+1 オープン (RFI)",
+  "format": "9-max 100bb",
+  "position": "UTG1",
+  "scenario": "RFI",
+  "actions": ["fold", "raise"],
+  "hands": {
+    "AA": { "raise": 1 }, "KK": { "raise": 1 }, "QQ": { "raise": 1 }, "JJ": { "raise": 1 },
+    "TT": { "raise": 1 }, "99": { "raise": 1 }, "88": { "raise": 0.5, "fold": 0.5 },
+
+    "AKs": { "raise": 1 }, "AQs": { "raise": 1 }, "AJs": { "raise": 1 }, "ATs": { "raise": 1 },
+    "A9s": { "raise": 0.5, "fold": 0.5 }, "A5s": { "raise": 0.5, "fold": 0.5 },
+    "KQs": { "raise": 1 }, "KJs": { "raise": 1 }, "KTs": { "raise": 1 },
+    "QJs": { "raise": 1 }, "QTs": { "raise": 0.5, "fold": 0.5 },
+    "JTs": { "raise": 1 }, "T9s": { "raise": 0.5, "fold": 0.5 },
+
+    "AKo": { "raise": 1 }, "AQo": { "raise": 1 }, "AJo": { "raise": 0.5, "fold": 0.5 },
+    "KQo": { "raise": 0.5, "fold": 0.5 }
+  }
+}
