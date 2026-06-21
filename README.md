@@ -14,6 +14,9 @@ PWA 対応でオフライン動作可能。
 | **GTO 9m** | 9-max 100bb キャッシュ | RFI |
 | **ヨコサワ（トーナメント）** | 9-max | オープン / vsレイズ（コール・3bet） |
 
+<img width="590" height="1278" alt="IMG_2407" src="https://github.com/user-attachments/assets/7065586c-7714-4361-8f70-2ac20753c0b3" />
+
+
 ## 採点方式
 
 選んだアクションの **GTO 頻度 × 100** がそのまま得点になる。
