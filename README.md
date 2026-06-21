@@ -18,6 +18,17 @@ PWA 対応でオフライン動作可能。
   <img width="320" alt="IMG_2407" src="https://github.com/user-attachments/assets/7065586c-7714-4361-8f70-2ac20753c0b3" />
 </div>
 
+## インストール（PWA）
+
+ブラウザからホーム画面に追加することで、アプリとして使える。
+
+| ブラウザ | 手順 |
+|---|---|
+| iOS Safari | 共有ボタン →「ホーム画面に追加」 |
+| Android Chrome | メニュー →「アプリをインストール」 |
+| Desktop Chrome | アドレスバー右端のインストールアイコン |
+
+インストール後はオフラインでも動作する。
 
 ## 採点方式
 
@@ -69,18 +80,6 @@ src/
 └── types/
     └── range.ts    # Range / Action / Position 型定義
 ```
-
-## インストール（PWA）
-
-ブラウザからホーム画面に追加することで、アプリとして使える。
-
-| ブラウザ | 手順 |
-|---|---|
-| iOS Safari | 共有ボタン →「ホーム画面に追加」 |
-| Android Chrome | メニュー →「アプリをインストール」 |
-| Desktop Chrome | アドレスバー右端のインストールアイコン |
-
-インストール後はオフラインでも動作する。
 
 ## Contributing
 
