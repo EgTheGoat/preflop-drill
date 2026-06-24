@@ -2,10 +2,19 @@
 // 練習対象は「モード（ヨコサワ / GTO）」で選ぶ。席（ポジション）は出題ごとにランダム。
 
 import { create } from "zustand";
-import type { Action } from "../types/range";
+import type { Action, Range } from "../types/range";
+import type { Card } from "../lib/cards";
 import { rangesForMode, type Mode } from "../data/ranges";
 import { generateQuestion, type Question } from "../lib/trainer";
 import { scoreAnswer, type ScoreResult } from "../lib/scoring";
+
+export interface HistoryItem {
+  hand: string;
+  range: Range;
+  correct: boolean;
+  action: Action;
+  cards: [Card, Card];
+}
 
 interface HandStat {
   count: number;
@@ -18,9 +27,10 @@ interface Stats {
   correctCount: number;
   /** ハンド表記 → 集計（苦手ハンド抽出用）。キーは "rangeId|hand"。 */
   byHand: Record<string, HandStat>;
+  history: HistoryItem[];
 }
 
-const emptyStats = (): Stats => ({ count: 0, totalScore: 0, correctCount: 0, byHand: {} });
+const emptyStats = (): Stats => ({ count: 0, totalScore: 0, correctCount: 0, byHand: {}, history: [] });
 
 const DEFAULT_MODE: Mode = "gto_9max";
 
@@ -78,6 +88,7 @@ export const useSession = create<SessionState>((set, get) => ({
           ...stats.byHand,
           [key]: { count: prev.count + 1, totalScore: prev.totalScore + result.score },
         },
+        history: [{ hand: question.hand, range: question.range, correct: result.correct, action, cards: question.cards }, ...stats.history].slice(0, 50),
       },
     });
   },
