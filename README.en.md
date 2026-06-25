@@ -1,5 +1,7 @@
 # preflop-drill
 
+[日本語](./README.md) | [English](./README.en.md)
+
 A web app for drilling Texas Hold'em preflop ranges.  
 A random position and hand are presented each round; your chosen action is checked against the GTO range and graded correct or incorrect.  
 PWA-enabled — works offline.
