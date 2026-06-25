@@ -120,5 +120,5 @@ For Yokosawa mode range structure, see `src/data/yokosawa.ts`.
 
 ## License
 
-[AGPL-3.0-or-later](./LICENSE)  
+[MIT](./LICENSE)  
 Yokosawa ranges © Yokosawa (referenced for educational purposes). GTO ranges are original samples based on standard theory.
