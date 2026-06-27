@@ -121,9 +121,9 @@ body {
 }
 .table-felt {
   position: absolute;
-  inset: 19.4% 11.3%; /* 輪（フェルト楕円）を従来比 10% 縮小 */
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 42%, #18342a, #0f1f17 72%);
+  inset: 19.4% 8%;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at 50% 42%, #18342a, #0f1f17 72%);
   border: 1px solid #244033;
   box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.55);
   display: flex;

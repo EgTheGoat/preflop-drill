@@ -7,8 +7,8 @@ import { POSITION_LABEL, SIX_MAX_ORDER, type Position } from "../types/range";
 // 楕円の中心・半径（%）。6-max の従来レイアウトを再現しつつ任意席数に一般化する。
 const CX = 50;
 const CY = 52;
-const RX = 40;
-const RY = 40;
+const RX = 44;
+const RY = 36;
 
 // ヒーローからの相対オフセット offset(0=自分,1=左隣…) と総席数 n から楕円上の座席座標を求める。
 // 0 を最下部中央(下=-90°)に置き、反時計回り（左→上→右）へ並べる。
