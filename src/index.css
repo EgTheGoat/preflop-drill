@@ -202,8 +202,8 @@ body {
 
 /* ---- hole cards ---- */
 .ask .hole-cards {
-  margin-top: 34px;
-  margin-bottom: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .hole-cards {
   display: flex;
@@ -211,8 +211,8 @@ body {
   align-items: center;
 }
 .card {
-  width: 116px;
-  height: 162px;
+  width: 104px;
+  height: 146px;
   background: #fbfbf9;
   border-radius: 14px;
   display: flex;
@@ -231,13 +231,13 @@ body {
   z-index: 2;
 }
 .card-rank {
-  font-size: 62px;
+  font-size: 56px;
   font-weight: 800;
   line-height: 1;
   color: #16181c;
 }
 .card-suit {
-  font-size: 48px;
+  font-size: 43px;
   line-height: 1;
   margin-top: 3px;
   color: #16181c;
