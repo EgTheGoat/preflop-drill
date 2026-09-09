@@ -5,6 +5,7 @@ import { useSession } from "../store/session";
 import { PlayingCard } from "./PlayingCard";
 import { ActionButtons } from "./ActionButtons";
 import { ModeSwitch } from "./ModeSwitch";
+import { PositionFilter } from "./PositionFilter";
 import { Feedback } from "./Feedback";
 import { TableDiagram } from "./TableDiagram";
 import { RangeGrid } from "./RangeGrid";
@@ -102,6 +103,7 @@ export function Quiz() {
           {stats.correctCount} / {stats.count}
         </span>
       </header>
+      <PositionFilter />
 
       <div className="ask">
         <TableDiagram active={range.position} raiser={raiser} order={order} />

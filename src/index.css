@@ -979,7 +979,7 @@ body {
   font-family: inherit;
   padding: 7px 32px 7px 13px;
   cursor: pointer;
-  max-width: 200px;
+  max-width: 280px;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 .mode-select:focus {
@@ -989,6 +989,33 @@ body {
 }
 .mode-select:hover {
   border-color: #3d4450;
+}
+
+/* ---- position filter ---- */
+.pos-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.pos-chip {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.pos-chip.on {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: #fff;
 }
 
 /* ---- more hub（その他）。外側はカードで包まず、リンクカードを直接並べる。 ---- */

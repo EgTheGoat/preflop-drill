@@ -5,6 +5,7 @@ import { create } from "zustand";
 import type { Action, Range } from "../types/range";
 import type { Card } from "../lib/cards";
 import { rangesForMode, type Mode } from "../data/ranges";
+import type { Position } from "../types/range";
 import { generateQuestion, type Question } from "../lib/trainer";
 import { scoreAnswer, type ScoreResult } from "../lib/scoring";
 
@@ -35,35 +36,51 @@ const emptyStats = (): Stats => ({ count: 0, totalScore: 0, correctCount: 0, byH
 const DEFAULT_MODE: Mode = "gtowiz_6max";
 
 interface SessionState {
-  /** 練習モード（流派）。 */
   mode: Mode;
+  /** null = 全ポジション。セットされた場合はそのポジションのみ出題。 */
+  selectedPositions: Position[] | null;
   question: Question | null;
   lastAnswer: Action | null;
   lastResult: ScoreResult | null;
   stats: Stats;
 
   setMode: (mode: Mode) => void;
+  setPositions: (positions: Position[] | null) => void;
   nextQuestion: () => void;
   answer: (action: Action) => void;
   reset: () => void;
 }
 
+function activeRanges(mode: Mode, positions: Position[] | null) {
+  const all = rangesForMode(mode);
+  if (!positions || positions.length === 0) return all;
+  return all.filter((r) => positions.includes(r.position));
+}
+
 export const useSession = create<SessionState>((set, get) => ({
   mode: DEFAULT_MODE,
+  selectedPositions: null,
   question: null,
   lastAnswer: null,
   lastResult: null,
   stats: emptyStats(),
 
   setMode: (mode) => {
-    // モードを変えたら成績をリセットして即出題。
-    set({ mode, stats: emptyStats(), lastAnswer: null, lastResult: null });
-    set({ question: generateQuestion(rangesForMode(mode)) });
+    set({ mode, selectedPositions: null, stats: emptyStats(), lastAnswer: null, lastResult: null });
+    set({ question: generateQuestion(activeRanges(mode, null)) });
+  },
+
+  setPositions: (positions) => {
+    const { mode } = get();
+    const pos = positions && positions.length > 0 ? positions : null;
+    set({ selectedPositions: pos, stats: emptyStats(), lastAnswer: null, lastResult: null });
+    set({ question: generateQuestion(activeRanges(mode, pos)) });
   },
 
   nextQuestion: () => {
+    const { mode, selectedPositions } = get();
     set({
-      question: generateQuestion(rangesForMode(get().mode)),
+      question: generateQuestion(activeRanges(mode, selectedPositions)),
       lastAnswer: null,
       lastResult: null,
     });
@@ -94,7 +111,8 @@ export const useSession = create<SessionState>((set, get) => ({
   },
 
   reset: () => {
+    const { mode, selectedPositions } = get();
     set({ stats: emptyStats(), lastAnswer: null, lastResult: null });
-    set({ question: generateQuestion(rangesForMode(get().mode)) });
+    set({ question: generateQuestion(activeRanges(mode, selectedPositions)) });
   },
 }));
