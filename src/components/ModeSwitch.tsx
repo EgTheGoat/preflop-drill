@@ -1,6 +1,3 @@
-// 練習画面ヘッダーに置くモード（流派）切替。ヨコサワ / GTO をセグメントで即切替。
-// モード変更は成績リセット＋再出題を伴うため、同じモードを押しても何もしない。
-
 import { useSession } from "../store/session";
 import { MODES } from "../data/ranges";
 
@@ -9,23 +6,16 @@ export function ModeSwitch() {
   const setMode = useSession((s) => s.setMode);
 
   return (
-    <div className="mode-switch" role="tablist" aria-label="練習モード">
-      {MODES.map((m) => {
-        const on = mode === m.id;
-        return (
-          <button
-            key={m.id}
-            role="tab"
-            className={`mode-seg${on ? " on" : ""}`}
-            aria-selected={on}
-            onClick={() => {
-              if (!on) setMode(m.id);
-            }}
-          >
-            {m.short}
-          </button>
-        );
-      })}
-    </div>
+    <select
+      className="mode-select"
+      value={mode}
+      onChange={(e) => setMode(e.target.value as typeof mode)}
+    >
+      {MODES.map((m) => (
+        <option key={m.id} value={m.id}>
+          {m.label}
+        </option>
+      ))}
+    </select>
   );
 }

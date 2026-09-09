@@ -20,7 +20,17 @@ export function Feedback({ range, hand, result }: Props) {
   return (
     <div className={`result ${result.correct ? "ok" : "ng"}`}>
       <div className="result-row">
-        <span className="freqs-label">GTO頻度</span>
+        <div className="result-bar">
+          {parts.map(
+            (p) =>
+              p.f > 0 && (
+                <span
+                  key={p.a}
+                  style={{ height: `${p.f * 100}%`, background: ACTION_COLORS[p.a] }}
+                />
+              ),
+          )}
+        </div>
         <span className="freqs">
           {parts.map((p) => (
             <span
@@ -32,18 +42,6 @@ export function Feedback({ range, hand, result }: Props) {
             </span>
           ))}
         </span>
-      </div>
-
-      <div className="result-bar">
-        {parts.map(
-          (p) =>
-            p.f > 0 && (
-              <span
-                key={p.a}
-                style={{ width: `${p.f * 100}%`, background: ACTION_COLORS[p.a] }}
-              />
-            ),
-        )}
       </div>
     </div>
   );

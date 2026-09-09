@@ -13,12 +13,12 @@ interface Props {
   tierColored?: boolean;
 }
 
-/** 戦略を「下から fold、上に行動」の縦グラデーション background にする。 */
+/** 戦略を「左から行動、右に fold」の横グラデーション background にする。 */
 function cellBackground(range: Range, hand: string): string {
   const strat = getStrategy(range, hand);
   const stops: string[] = [];
   let acc = 0;
-  const ordered = [...range.actions].sort((a, b) => (a === "fold" ? -1 : b === "fold" ? 1 : 0));
+  const ordered = [...range.actions].sort((a, b) => (a === "fold" ? 1 : b === "fold" ? -1 : 0));
   for (const action of ordered) {
     const freq = strat[action] ?? 0;
     if (freq <= 0) continue;
@@ -29,7 +29,7 @@ function cellBackground(range: Range, hand: string): string {
     stops.push(`${color} ${from}%, ${color} ${to}%`);
   }
   if (stops.length === 0) stops.push(`${ACTION_COLORS.fold} 0%, ${ACTION_COLORS.fold} 100%`);
-  return `linear-gradient(to top, ${stops.join(", ")})`;
+  return `linear-gradient(to right, ${stops.join(", ")})`;
 }
 
 /** 背景の明るさに応じて読みやすい文字色を返す。 */

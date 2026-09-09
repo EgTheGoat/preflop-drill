@@ -1,0 +1,167 @@
+{
+  "id": "gtowiz_6max_100bb_rfi_utg",
+  "label": "UTG オープン (RFI)",
+  "format": "6-max 100bb",
+  "position": "UTG",
+  "scenario": "RFI",
+  "actions": [
+    "fold",
+    "raise"
+  ],
+  "hands": {
+    "54s": {
+      "fold": 0.7429,
+      "raise": 0.2571
+    },
+    "55": {
+      "fold": 0.742,
+      "raise": 0.258
+    },
+    "65s": {
+      "fold": 0.6571,
+      "raise": 0.3429
+    },
+    "66": {
+      "fold": 0.7398,
+      "raise": 0.2602
+    },
+    "76s": {
+      "fold": 0.9422,
+      "raise": 0.0578
+    },
+    "77": {
+      "fold": 0.3893,
+      "raise": 0.6107
+    },
+    "88": {
+      "raise": 1.0
+    },
+    "99": {
+      "raise": 1.0
+    },
+    "A2s": {
+      "raise": 1.0
+    },
+    "A3s": {
+      "raise": 1.0
+    },
+    "A4s": {
+      "raise": 1.0
+    },
+    "A5o": {
+      "fold": 0.7515,
+      "raise": 0.2485
+    },
+    "A5s": {
+      "raise": 1.0
+    },
+    "A6s": {
+      "raise": 1.0
+    },
+    "A7s": {
+      "raise": 1.0
+    },
+    "A8s": {
+      "raise": 1.0
+    },
+    "A9o": {
+      "fold": 0.8514,
+      "raise": 0.1486
+    },
+    "A9s": {
+      "raise": 1.0
+    },
+    "AA": {
+      "raise": 1.0
+    },
+    "AJo": {
+      "raise": 1.0
+    },
+    "AJs": {
+      "raise": 1.0
+    },
+    "AKo": {
+      "raise": 1.0
+    },
+    "AKs": {
+      "raise": 1.0
+    },
+    "AQo": {
+      "raise": 1.0
+    },
+    "AQs": {
+      "raise": 1.0
+    },
+    "ATo": {
+      "raise": 1.0
+    },
+    "ATs": {
+      "raise": 1.0
+    },
+    "JJ": {
+      "raise": 1.0
+    },
+    "JTs": {
+      "raise": 1.0
+    },
+    "K5s": {
+      "raise": 1.0
+    },
+    "K6s": {
+      "fold": 0.5317,
+      "raise": 0.4683
+    },
+    "K7s": {
+      "fold": 0.0361,
+      "raise": 0.9639
+    },
+    "K8s": {
+      "raise": 1.0
+    },
+    "K9s": {
+      "raise": 1.0
+    },
+    "KJo": {
+      "raise": 1.0
+    },
+    "KJs": {
+      "raise": 1.0
+    },
+    "KK": {
+      "raise": 1.0
+    },
+    "KQo": {
+      "raise": 1.0
+    },
+    "KQs": {
+      "raise": 1.0
+    },
+    "KTo": {
+      "fold": 0.2739,
+      "raise": 0.7261
+    },
+    "KTs": {
+      "raise": 1.0
+    },
+    "Q9s": {
+      "fold": 0.9034,
+      "raise": 0.0966
+    },
+    "QJs": {
+      "raise": 1.0
+    },
+    "QQ": {
+      "raise": 1.0
+    },
+    "QTs": {
+      "raise": 1.0
+    },
+    "T9s": {
+      "fold": 0.8541,
+      "raise": 0.1459
+    },
+    "TT": {
+      "raise": 1.0
+    }
+  }
+}

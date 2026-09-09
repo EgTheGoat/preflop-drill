@@ -1,0 +1,186 @@
+{
+  "id": "gtowiz_6max_vs_btn_sb",
+  "label": "SB vs BTN オープン",
+  "format": "6-max 100bb",
+  "position": "SB",
+  "scenario": "vs BTN オープン",
+  "actions": [
+    "fold",
+    "call",
+    "raise"
+  ],
+  "hands": {
+    "55": {
+      "fold": 0.7327,
+      "call": 0.245,
+      "raise": 0.0223
+    },
+    "65s": {
+      "fold": 0.9931,
+      "raise": 0.0069
+    },
+    "66": {
+      "fold": 0.566,
+      "call": 0.2677,
+      "raise": 0.1663
+    },
+    "77": {
+      "call": 0.5838,
+      "raise": 0.4162
+    },
+    "88": {
+      "call": 0.4586,
+      "raise": 0.5414
+    },
+    "99": {
+      "call": 0.6194,
+      "raise": 0.3806
+    },
+    "A2s": {
+      "raise": 1.0
+    },
+    "A3s": {
+      "raise": 1.0
+    },
+    "A4s": {
+      "call": 0.2096,
+      "raise": 0.7904
+    },
+    "A5s": {
+      "call": 0.0166,
+      "raise": 0.9834
+    },
+    "A6s": {
+      "fold": 0.0271,
+      "raise": 0.9729
+    },
+    "A7s": {
+      "call": 0.1231,
+      "raise": 0.8769
+    },
+    "A8s": {
+      "call": 0.3111,
+      "raise": 0.6889
+    },
+    "A9s": {
+      "call": 0.924,
+      "raise": 0.076
+    },
+    "AA": {
+      "raise": 1.0
+    },
+    "AJo": {
+      "call": 0.2756,
+      "raise": 0.7244
+    },
+    "AJs": {
+      "raise": 1.0
+    },
+    "AKo": {
+      "raise": 1.0
+    },
+    "AKs": {
+      "raise": 1.0
+    },
+    "AQo": {
+      "call": 0.0735,
+      "raise": 0.9265
+    },
+    "AQs": {
+      "call": 0.359,
+      "raise": 0.641
+    },
+    "ATo": {
+      "fold": 0.2659,
+      "raise": 0.7341
+    },
+    "ATs": {
+      "call": 1.0
+    },
+    "J9s": {
+      "fold": 0.9944,
+      "raise": 0.0056
+    },
+    "JJ": {
+      "raise": 1.0
+    },
+    "JTs": {
+      "call": 0.3317,
+      "raise": 0.6683
+    },
+    "K5s": {
+      "fold": 0.141,
+      "raise": 0.859
+    },
+    "K6s": {
+      "fold": 0.4758,
+      "raise": 0.5242
+    },
+    "K7s": {
+      "fold": 0.9662,
+      "raise": 0.0338
+    },
+    "K8s": {
+      "raise": 1.0
+    },
+    "K9s": {
+      "call": 0.1399,
+      "raise": 0.8601
+    },
+    "KJo": {
+      "raise": 1.0
+    },
+    "KJs": {
+      "call": 0.2995,
+      "raise": 0.7005
+    },
+    "KK": {
+      "raise": 1.0
+    },
+    "KQo": {
+      "call": 0.1618,
+      "raise": 0.8382
+    },
+    "KQs": {
+      "call": 0.1889,
+      "raise": 0.8111
+    },
+    "KTo": {
+      "fold": 0.8069,
+      "raise": 0.1931
+    },
+    "KTs": {
+      "call": 0.2644,
+      "raise": 0.7356
+    },
+    "Q9s": {
+      "fold": 0.9328,
+      "raise": 0.0672
+    },
+    "QJo": {
+      "fold": 0.8173,
+      "call": 0.0138,
+      "raise": 0.1689
+    },
+    "QJs": {
+      "call": 0.2183,
+      "raise": 0.7817
+    },
+    "QQ": {
+      "raise": 1.0
+    },
+    "QTs": {
+      "call": 0.206,
+      "raise": 0.794
+    },
+    "T9s": {
+      "fold": 0.9007,
+      "call": 0.0338,
+      "raise": 0.0655
+    },
+    "TT": {
+      "call": 0.1679,
+      "raise": 0.8321
+    }
+  }
+}

@@ -32,7 +32,7 @@ interface Stats {
 
 const emptyStats = (): Stats => ({ count: 0, totalScore: 0, correctCount: 0, byHand: {}, history: [] });
 
-const DEFAULT_MODE: Mode = "gto_9max";
+const DEFAULT_MODE: Mode = "gtowiz_6max";
 
 interface SessionState {
   /** 練習モード（流派）。 */
