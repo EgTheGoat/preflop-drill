@@ -12,9 +12,15 @@ PWA-enabled — works offline.
 
 | Mode | Table | Scenario |
 |---|---|---|
-| **GTO 6m** | 6-max 100bb cash | RFI (open or fold) |
-| **GTO 9m** | 9-max 100bb cash | RFI |
+| **GTOWiz RFI** | 6-max NL25 100bb cash | RFI (open or fold) |
+| **vs UTG** | 6-max NL25 100bb cash | HJ/CO/BTN/SB/BB action facing a UTG open |
+| **vs HJ** | 6-max NL25 100bb cash | CO/BTN/SB/BB action facing a HJ open |
+| **vs CO** | 6-max NL25 100bb cash | BTN/SB/BB action facing a CO open |
+| **vs BTN** | 6-max NL25 100bb cash | SB/BB action facing a BTN open |
+| **vs SB** | 6-max NL25 100bb cash | BB action facing a SB open |
 | **Yokosawa (Tournament)** | 9-max | Open / vs raise (call or 3-bet) |
+
+RFI and vs-open ranges are sourced from real [GTO Wizard](https://app.gtowizard.com/) solutions.
 
 <div align="center">
   <img width="320" alt="preflop-drill screenshot" src="https://github.com/user-attachments/assets/7065586c-7714-4361-8f70-2ac20753c0b3" />
@@ -64,7 +70,7 @@ After each answer, a history entry is added to the stats panel.
 **Prerequisite:** [mise](https://mise.jdx.dev/) installed.
 
 ```bash
-mise install   # provision Node 22
+mise install   # provision Node 24
 npm install
 npm run dev    # dev server (localhost:5173)
 npm test       # unit tests
@@ -77,7 +83,7 @@ npm run build  # production build → dist/
 src/
 ├── components/     # UI components (Quiz, RangeGrid, TableDiagram, …)
 ├── data/
-│   ├── ranges/     # GTO range data (JSON)
+│   ├── ranges/     # Range data (JSON)
 │   ├── yokosawa.ts # Yokosawa mode range definitions
 │   └── yokosawaChart.ts / yokosawaVs.ts
 ├── lib/
@@ -103,14 +109,15 @@ See the `Range` type in `src/types/range.ts` for the schema.
 ```ts
 // Minimal example
 {
-  "id": "6max_100bb_rfi_btn",
-  "label": "BTN Open (RFI)",
+  "id": "gtowiz_6max_vs_utg_bb",
+  "label": "BB vs UTG Open",
   "format": "6-max 100bb",
-  "position": "BTN",
-  "scenario": "RFI",
-  "actions": ["fold", "raise"],
+  "position": "BB",
+  "scenario": "vs UTG Open",
+  "actions": ["fold", "call", "raise"],
   "hands": {
     "AKs": { "raise": 1 },
+    "22":  { "call": 1 },
     "72o": { "fold": 1 }
   }
 }
@@ -121,4 +128,4 @@ For Yokosawa mode range structure, see `src/data/yokosawa.ts`.
 ## License
 
 [MIT](./LICENSE)  
-Yokosawa ranges © Yokosawa (referenced for educational purposes). GTO ranges are original samples based on standard theory.
+Yokosawa ranges © Yokosawa (referenced for educational purposes). GTO Wizard ranges reference solution data from that service.
