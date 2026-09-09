@@ -12,9 +12,15 @@ PWA 対応でオフライン動作可能。
 
 | モード | テーブル | シナリオ |
 |---|---|---|
-| **GTO 6m** | 6-max 100bb キャッシュ | RFI（オープンするか） |
-| **GTO 9m** | 9-max 100bb キャッシュ | RFI |
+| **GTOWiz RFI** | 6-max NL25 100bb | RFI（オープンするか）|
+| **vs UTG** | 6-max NL25 100bb | UTG オープンに対する HJ/CO/BTN/SB/BB のアクション |
+| **vs HJ** | 6-max NL25 100bb | HJ オープンに対する CO/BTN/SB/BB のアクション |
+| **vs CO** | 6-max NL25 100bb | CO オープンに対する BTN/SB/BB のアクション |
+| **vs BTN** | 6-max NL25 100bb | BTN オープンに対する SB/BB のアクション |
+| **vs SB** | 6-max NL25 100bb | SB オープンに対する BB のアクション |
 | **ヨコサワ（トーナメント）** | 9-max | オープン / vsレイズ（コール・3bet） |
+
+RFI・vsオープンのレンジデータは [GTO Wizard](https://app.gtowizard.com/) の実ソリューションを使用。
 
 <div align="center">
   <img width="320" alt="IMG_2407" src="https://github.com/user-attachments/assets/7065586c-7714-4361-8f70-2ac20753c0b3" />
@@ -77,7 +83,7 @@ npm run build  # 本番ビルド → dist/
 src/
 ├── components/     # UI コンポーネント（Quiz, RangeGrid, TableDiagram など）
 ├── data/
-│   ├── ranges/     # GTO レンジデータ（JSON）
+│   ├── ranges/     # レンジデータ（JSON）
 │   ├── yokosawa.ts # ヨコサワモードのレンジ定義
 │   └── yokosawaChart.ts / yokosawaVs.ts
 ├── lib/
@@ -103,14 +109,15 @@ src/
 ```ts
 // 最小構成の例
 {
-  "id": "6max_100bb_rfi_btn",
-  "label": "BTN オープン (RFI)",
+  "id": "gtowiz_6max_vs_utg_bb",
+  "label": "BB vs UTG オープン",
   "format": "6-max 100bb",
-  "position": "BTN",
-  "scenario": "RFI",
-  "actions": ["fold", "raise"],
+  "position": "BB",
+  "scenario": "vs UTG オープン",
+  "actions": ["fold", "call", "raise"],
   "hands": {
     "AKs": { "raise": 1 },
+    "22":  { "call": 1 },
     "72o": { "fold": 1 }
   }
 }
@@ -121,4 +128,4 @@ src/
 ## ライセンス
 
 [MIT](./LICENSE)  
-ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。GTOレンジは教科書的な自作サンプル。
+ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。GTO Wizard レンジは同サービスのソリューションデータを参照。
