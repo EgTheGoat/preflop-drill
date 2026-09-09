@@ -20,7 +20,6 @@ PWA-enabled — works offline.
 | **vs SB** | 6-max NL25 100bb cash | BB action facing a SB open |
 | **Yokosawa (Tournament)** | 9-max | Open / vs raise (call or 3-bet) |
 
-RFI and vs-open ranges are sourced from real [GTO Wizard](https://app.gtowizard.com/) solutions.
 
 <div align="center">
   <img width="320" alt="preflop-drill screenshot" src="https://github.com/user-attachments/assets/7065586c-7714-4361-8f70-2ac20753c0b3" />
@@ -128,4 +127,4 @@ For Yokosawa mode range structure, see `src/data/yokosawa.ts`.
 ## License
 
 [MIT](./LICENSE)  
-Yokosawa ranges © Yokosawa (referenced for educational purposes). GTO Wizard ranges reference solution data from that service.
+Yokosawa ranges © Yokosawa (referenced for educational purposes).

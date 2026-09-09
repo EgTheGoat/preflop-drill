@@ -20,7 +20,6 @@ PWA 対応でオフライン動作可能。
 | **vs SB** | 6-max NL25 100bb | SB オープンに対する BB のアクション |
 | **ヨコサワ（トーナメント）** | 9-max | オープン / vsレイズ（コール・3bet） |
 
-RFI・vsオープンのレンジデータは [GTO Wizard](https://app.gtowizard.com/) の実ソリューションを使用。
 
 <div align="center">
   <img width="320" alt="IMG_2407" src="https://github.com/user-attachments/assets/7065586c-7714-4361-8f70-2ac20753c0b3" />
@@ -128,4 +127,4 @@ src/
 ## ライセンス
 
 [MIT](./LICENSE)  
-ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。GTO Wizard レンジは同サービスのソリューションデータを参照。
+ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。
