@@ -20,9 +20,15 @@ function actionHands(range: Range): string[] {
     .map(([hand]) => hand);
 }
 
-/** fold 100%（=レンジ外 or 明示 fold）のハンド一覧。 */
+/** fold 100%（=レンジ外 or 明示 fold）のハンド一覧。
+ *  range.hands に明示的な fold:1.0 エントリがある場合（vs 3bet/4betスポット）は
+ *  その手だけを返す。ない場合（RFI/vsオープンスポット）は全169手から acting を除く。 */
 function foldHands(range: Range): string[] {
   const acting = new Set(actionHands(range));
+  const explicitFolds = Object.entries(range.hands)
+    .filter(([, strat]) => Object.keys(strat).every((k) => k === "fold"))
+    .map(([h]) => h);
+  if (explicitFolds.length > 0) return explicitFolds;
   return allHands().filter((h) => !acting.has(h));
 }
 
