@@ -42,6 +42,10 @@ import vs4betBbMp from "./ranges/gtowiz_6max_vs4bet_bb_vs_mp.json";
 import vs4betBbCo from "./ranges/gtowiz_6max_vs4bet_bb_vs_co.json";
 import vs4betBbBtn from "./ranges/gtowiz_6max_vs4bet_bb_vs_btn.json";
 import vs4betBbSb from "./ranges/gtowiz_6max_vs4bet_bb_vs_sb.json";
+import vs4betBtnUtg from "./ranges/gtowiz_6max_vs4bet_btn_vs_utg.json";
+import vs4betBtnMp from "./ranges/gtowiz_6max_vs4bet_btn_vs_mp.json";
+import vs4betSbCo from "./ranges/gtowiz_6max_vs4bet_sb_vs_co.json";
+import vs4betSbBtn from "./ranges/gtowiz_6max_vs4bet_sb_vs_btn.json";
 import { YOKOSAWA_RANGES } from "./yokosawa";
 import { YOKOSAWA_VS_RANGES } from "./yokosawaVs";
 
@@ -60,9 +64,11 @@ export const GTOWIZ_6MAX_VS_3BET: Range[] = [
 ] as Range[];
 export const GTOWIZ_6MAX_VS_4BET: Range[] = [
   vs4betMpUtg, vs4betSbUtg, vs4betBbUtg,
+  vs4betBtnUtg,
   vs4betSbMp, vs4betBbMp,
-  vs4betBbCo,
-  vs4betBbBtn,
+  vs4betBtnMp,
+  vs4betSbCo, vs4betBbCo,
+  vs4betSbBtn, vs4betBbBtn,
   vs4betBbSb,
 ] as Range[];
 

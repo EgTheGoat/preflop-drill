@@ -1,0 +1,115 @@
+{
+  "id": "gtowiz_6max_vs4bet_btn_vs_mp",
+  "label": "BTN vs HJ 4bet",
+  "format": "6-max 100bb",
+  "position": "BTN",
+  "scenario": "vs MP 4bet",
+  "actions": [
+    "fold",
+    "call",
+    "raise"
+  ],
+  "hands": {
+    "44": {
+      "fold": 0.4946,
+      "raise": 0.5054
+    },
+    "54s": {
+      "fold": 0.4432,
+      "call": 0.5568
+    },
+    "55": {
+      "fold": 0.1001,
+      "raise": 0.8999
+    },
+    "65s": {
+      "fold": 0.6806,
+      "call": 0.3194
+    },
+    "66": {
+      "fold": 0.0589,
+      "call": 0.5098,
+      "raise": 0.4313
+    },
+    "76s": {
+      "fold": 0.8866,
+      "call": 0.1134
+    },
+    "77": {
+      "fold": 0.2856,
+      "call": 0.0973,
+      "raise": 0.6171
+    },
+    "87s": {
+      "fold": 0.5415,
+      "call": 0.4585
+    },
+    "88": {
+      "fold": 0.5858,
+      "call": 0.0246,
+      "raise": 0.3896
+    },
+    "99": {
+      "fold": 0.6355,
+      "call": 0.0768,
+      "raise": 0.2877
+    },
+    "A5s": {
+      "fold": 0.7883,
+      "call": 0.0916,
+      "raise": 0.1201
+    },
+    "AA": {
+      "call": 0.0846,
+      "raise": 0.9154
+    },
+    "AJs": {
+      "call": 1.0
+    },
+    "AKo": {
+      "raise": 1.0
+    },
+    "AKs": {
+      "raise": 1.0
+    },
+    "AQs": {
+      "call": 1.0
+    },
+    "ATs": {
+      "call": 1.0
+    },
+    "JJ": {
+      "call": 0.6136,
+      "raise": 0.3864
+    },
+    "KJs": {
+      "fold": 0.1027,
+      "call": 0.8973
+    },
+    "KK": {
+      "raise": 1.0
+    },
+    "KQs": {
+      "fold": 0.4441,
+      "call": 0.5019,
+      "raise": 0.054
+    },
+    "KTs": {
+      "fold": 0.9767,
+      "call": 0.0233
+    },
+    "QQ": {
+      "call": 0.1301,
+      "raise": 0.8699
+    },
+    "T9s": {
+      "fold": 0.9222,
+      "call": 0.0778
+    },
+    "TT": {
+      "fold": 0.4118,
+      "call": 0.1739,
+      "raise": 0.4142
+    }
+  }
+}

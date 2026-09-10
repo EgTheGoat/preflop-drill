@@ -1,0 +1,126 @@
+{
+  "id": "gtowiz_6max_vs4bet_btn_vs_utg",
+  "label": "BTN vs UTG 4bet",
+  "format": "6-max 100bb",
+  "position": "BTN",
+  "scenario": "vs UTG 4bet",
+  "actions": [
+    "fold",
+    "call",
+    "raise"
+  ],
+  "hands": {
+    "54s": {
+      "fold": 0.7937,
+      "call": 0.2063
+    },
+    "55": {
+      "fold": 0.0392,
+      "call": 0.8942,
+      "raise": 0.0666
+    },
+    "65s": {
+      "fold": 0.6824,
+      "call": 0.3176
+    },
+    "66": {
+      "fold": 0.2879,
+      "call": 0.2841,
+      "raise": 0.428
+    },
+    "76s": {
+      "fold": 0.9927,
+      "call": 0.0073
+    },
+    "77": {
+      "fold": 0.4658,
+      "call": 0.1355,
+      "raise": 0.3987
+    },
+    "87s": {
+      "fold": 0.0452,
+      "call": 0.9548
+    },
+    "88": {
+      "fold": 0.7787,
+      "call": 0.0063,
+      "raise": 0.215
+    },
+    "98s": {
+      "fold": 0.868,
+      "call": 0.132
+    },
+    "99": {
+      "fold": 0.6408,
+      "call": 0.0429,
+      "raise": 0.3163
+    },
+    "A5s": {
+      "fold": 0.8683,
+      "call": 0.1097,
+      "raise": 0.022
+    },
+    "AA": {
+      "call": 0.1081,
+      "raise": 0.8919
+    },
+    "AJs": {
+      "call": 1.0
+    },
+    "AKo": {
+      "call": 0.0107,
+      "raise": 0.9893
+    },
+    "AKs": {
+      "raise": 1.0
+    },
+    "AQo": {
+      "fold": 0.956,
+      "raise": 0.044
+    },
+    "AQs": {
+      "call": 1.0
+    },
+    "ATs": {
+      "fold": 0.2616,
+      "call": 0.7384
+    },
+    "JJ": {
+      "fold": 0.7491,
+      "call": 0.2509
+    },
+    "JTs": {
+      "fold": 0.6373,
+      "call": 0.3627
+    },
+    "KJs": {
+      "fold": 0.9096,
+      "call": 0.0904
+    },
+    "KK": {
+      "raise": 1.0
+    },
+    "KQs": {
+      "fold": 0.8017,
+      "call": 0.0223,
+      "raise": 0.176
+    },
+    "KTs": {
+      "fold": 0.9904,
+      "raise": 0.0096
+    },
+    "QQ": {
+      "call": 0.3236,
+      "raise": 0.6764
+    },
+    "T9s": {
+      "fold": 0.0839,
+      "call": 0.9161
+    },
+    "TT": {
+      "fold": 0.878,
+      "call": 0.1061,
+      "raise": 0.0159
+    }
+  }
+}
