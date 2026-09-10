@@ -1,0 +1,75 @@
+{
+  "id": "gtowiz_6max_vs4bet_sb_vs_mp",
+  "label": "SB vs HJ 4bet",
+  "format": "6-max 100bb",
+  "position": "SB",
+  "scenario": "vs MP 4bet",
+  "actions": [
+    "fold",
+    "call",
+    "raise"
+  ],
+  "hands": {
+    "55": {
+      "fold": 0.0063,
+      "raise": 0.9937
+    },
+    "66": {
+      "fold": 0.9613,
+      "raise": 0.0387
+    },
+    "77": {
+      "fold": 0.572,
+      "call": 0.0144,
+      "raise": 0.4136
+    },
+    "88": {
+      "fold": 0.6953,
+      "raise": 0.3047
+    },
+    "99": {
+      "fold": 0.7702,
+      "raise": 0.2298
+    },
+    "A5s": {
+      "fold": 0.9897,
+      "call": 0.0103
+    },
+    "AA": {
+      "raise": 1.0
+    },
+    "AJs": {
+      "fold": 0.611,
+      "call": 0.389
+    },
+    "AKo": {
+      "raise": 1.0
+    },
+    "AKs": {
+      "raise": 1.0
+    },
+    "AQs": {
+      "call": 1.0
+    },
+    "ATs": {
+      "fold": 0.9846,
+      "call": 0.0154
+    },
+    "JJ": {
+      "fold": 0.4405,
+      "call": 0.0116,
+      "raise": 0.5479
+    },
+    "KK": {
+      "raise": 1.0
+    },
+    "QQ": {
+      "call": 0.0114,
+      "raise": 0.9886
+    },
+    "TT": {
+      "fold": 0.5873,
+      "raise": 0.4127
+    }
+  }
+}

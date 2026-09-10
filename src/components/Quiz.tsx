@@ -37,9 +37,13 @@ function orderForMode(mode: string): Position[] {
   return SIX_MAX_ORDER;
 }
 
-/** 正解アクションの表示名（vsレイズスポットの raise は 3BET と表示）。 */
-function actionLabel(action: Action, is3betSpot: boolean): string {
-  if (action === "raise" && is3betSpot) return "3BET";
+/** 正解アクションの表示名（状況に応じて 3BET/4BET/5BET と表示）。 */
+function actionLabel(action: Action, range: Range): string {
+  if (action === "raise") {
+    if (range.scenario.includes("4bet")) return "5BET";
+    if (range.scenario.includes("3bet")) return "4BET";
+    if (range.actions.includes("call")) return "3BET";
+  }
   return ACTION_BUTTON_LABELS[action].split(" ")[0];
 }
 
@@ -47,9 +51,19 @@ function actionLabel(action: Action, is3betSpot: boolean): string {
 function promptText(range: Range): string {
   const call = range.actions.includes("call");
   const raise = range.actions.includes("raise");
+  if (range.scenario.includes("4bet")) return call && raise ? "コール / 5bet？" : "コール？";
+  if (range.scenario.includes("3bet")) return call && raise ? "コール / 4bet？" : "コール？";
   if (call && raise) return "コール / 3bet？";
   if (call) return "コール？";
   return "オープンレイズ？";
+}
+
+/** vs open/3bet/4bet スポットの raise ラベル。 */
+function raiseLabel(range: Range): string | undefined {
+  if (!range.actions.includes("call") || !range.actions.includes("raise")) return undefined;
+  if (range.scenario.includes("4bet")) return "5BET";
+  if (range.scenario.includes("3bet")) return "4BET";
+  return "3BET";
 }
 
 export function Quiz() {
@@ -89,8 +103,7 @@ export function Quiz() {
   // 後ろの人数はテーブルサイズ依存なので席順から算出する（UTG は 6-max=5 / 9-max=8）。
   const playersBehind = order.length - 1 - order.indexOf(range.position);
   const raiser = raiserFromScenario(range.scenario, range.position);
-  const is3betSpot = range.actions.includes("call") && range.actions.includes("raise");
-  const bestLabel = lastResult ? actionLabel(lastResult.best, is3betSpot) : "";
+  const bestLabel = lastResult ? actionLabel(lastResult.best, range) : "";
   // 解説はティア理論で説明できるヨコサワ系のみ。GTO は下の頻度表示に任せる。
   const explanation =
     answered && tierColored ? explainYokosawa(range, question.hand, raiser, playersBehind) : null;
@@ -119,9 +132,7 @@ export function Quiz() {
           chosen={lastAnswer}
           result={lastResult}
           onPick={answer}
-          raiseLabel={
-            range.actions.includes("call") && range.actions.includes("raise") ? "3BET" : undefined
-          }
+          raiseLabel={raiseLabel(range)}
         />
       </div>
 

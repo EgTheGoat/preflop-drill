@@ -1,0 +1,62 @@
+{
+  "id": "gtowiz_6max_vs4bet_sb_vs_utg",
+  "label": "SB vs UTG 4bet",
+  "format": "6-max 100bb",
+  "position": "SB",
+  "scenario": "vs UTG 4bet",
+  "actions": [
+    "fold",
+    "call",
+    "raise"
+  ],
+  "hands": {
+    "66": {
+      "fold": 0.9823,
+      "call": 0.0177
+    },
+    "77": {
+      "fold": 0.9742,
+      "call": 0.0258
+    },
+    "A4s": {
+      "fold": 0.9439,
+      "raise": 0.0561
+    },
+    "A5s": {
+      "fold": 0.8424,
+      "raise": 0.1576
+    },
+    "AA": {
+      "raise": 1.0
+    },
+    "AJs": {
+      "fold": 0.6361,
+      "call": 0.3639
+    },
+    "AKo": {
+      "raise": 1.0
+    },
+    "AKs": {
+      "raise": 1.0
+    },
+    "AQs": {
+      "call": 1.0
+    },
+    "ATs": {
+      "fold": 0.9556,
+      "call": 0.0444
+    },
+    "KK": {
+      "raise": 1.0
+    },
+    "QQ": {
+      "fold": 0.2466,
+      "call": 0.0178,
+      "raise": 0.7356
+    },
+    "TT": {
+      "fold": 0.9444,
+      "raise": 0.0556
+    }
+  }
+}

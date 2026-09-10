@@ -22,6 +22,26 @@ import vsCoBb from "./ranges/gtowiz_6max_vs_co_bb.json";
 import vsBtnSb from "./ranges/gtowiz_6max_vs_btn_sb.json";
 import vsBtnBb from "./ranges/gtowiz_6max_vs_btn_bb.json";
 import vsSbBb from "./ranges/gtowiz_6max_vs_sb_bb.json";
+import vs3betUtgMp from "./ranges/gtowiz_6max_vs3bet_utg_vs_mp.json";
+import vs3betUtgBtn from "./ranges/gtowiz_6max_vs3bet_utg_vs_btn.json";
+import vs3betUtgSb from "./ranges/gtowiz_6max_vs3bet_utg_vs_sb.json";
+import vs3betUtgBb from "./ranges/gtowiz_6max_vs3bet_utg_vs_bb.json";
+import vs3betMpBtn from "./ranges/gtowiz_6max_vs3bet_mp_vs_btn.json";
+import vs3betMpSb from "./ranges/gtowiz_6max_vs3bet_mp_vs_sb.json";
+import vs3betMpBb from "./ranges/gtowiz_6max_vs3bet_mp_vs_bb.json";
+import vs3betCoSb from "./ranges/gtowiz_6max_vs3bet_co_vs_sb.json";
+import vs3betCoBb from "./ranges/gtowiz_6max_vs3bet_co_vs_bb.json";
+import vs3betBtnSb from "./ranges/gtowiz_6max_vs3bet_btn_vs_sb.json";
+import vs3betBtnBb from "./ranges/gtowiz_6max_vs3bet_btn_vs_bb.json";
+import vs3betSbBb from "./ranges/gtowiz_6max_vs3bet_sb_vs_bb.json";
+import vs4betMpUtg from "./ranges/gtowiz_6max_vs4bet_mp_vs_utg.json";
+import vs4betSbUtg from "./ranges/gtowiz_6max_vs4bet_sb_vs_utg.json";
+import vs4betBbUtg from "./ranges/gtowiz_6max_vs4bet_bb_vs_utg.json";
+import vs4betSbMp from "./ranges/gtowiz_6max_vs4bet_sb_vs_mp.json";
+import vs4betBbMp from "./ranges/gtowiz_6max_vs4bet_bb_vs_mp.json";
+import vs4betBbCo from "./ranges/gtowiz_6max_vs4bet_bb_vs_co.json";
+import vs4betBbBtn from "./ranges/gtowiz_6max_vs4bet_bb_vs_btn.json";
+import vs4betBbSb from "./ranges/gtowiz_6max_vs4bet_bb_vs_sb.json";
 import { YOKOSAWA_RANGES } from "./yokosawa";
 import { YOKOSAWA_VS_RANGES } from "./yokosawaVs";
 
@@ -31,6 +51,20 @@ export const GTOWIZ_6MAX_VS_HJ: Range[] = [vsHjCo, vsHjBtn, vsHjSb, vsHjBb] as R
 export const GTOWIZ_6MAX_VS_CO: Range[] = [vsCoBtn, vsCoSb, vsCoBb] as Range[];
 export const GTOWIZ_6MAX_VS_BTN: Range[] = [vsBtnSb, vsBtnBb] as Range[];
 export const GTOWIZ_6MAX_VS_SB: Range[] = [vsSbBb] as Range[];
+export const GTOWIZ_6MAX_VS_3BET: Range[] = [
+  vs3betUtgMp, vs3betUtgBtn, vs3betUtgSb, vs3betUtgBb,
+  vs3betMpBtn, vs3betMpSb, vs3betMpBb,
+  vs3betCoSb, vs3betCoBb,
+  vs3betBtnSb, vs3betBtnBb,
+  vs3betSbBb,
+] as Range[];
+export const GTOWIZ_6MAX_VS_4BET: Range[] = [
+  vs4betMpUtg, vs4betSbUtg, vs4betBbUtg,
+  vs4betSbMp, vs4betBbMp,
+  vs4betBbCo,
+  vs4betBbBtn,
+  vs4betBbSb,
+] as Range[];
 
 export const YOKOSAWA_ALL: Range[] = [...YOKOSAWA_RANGES, ...YOKOSAWA_VS_RANGES];
 
@@ -42,6 +76,8 @@ export const RANGES: Range[] = [
   ...GTOWIZ_6MAX_VS_CO,
   ...GTOWIZ_6MAX_VS_BTN,
   ...GTOWIZ_6MAX_VS_SB,
+  ...GTOWIZ_6MAX_VS_3BET,
+  ...GTOWIZ_6MAX_VS_4BET,
 ];
 
 export function getRangeById(id: string): Range | undefined {
@@ -50,7 +86,7 @@ export function getRangeById(id: string): Range | undefined {
 
 // ---- 練習モード（流派）----
 
-export type Mode = "yokosawa" | "gtowiz_6max" | "gtowiz_6max_vs_utg" | "gtowiz_6max_vs_hj" | "gtowiz_6max_vs_co" | "gtowiz_6max_vs_btn" | "gtowiz_6max_vs_sb";
+export type Mode = "yokosawa" | "gtowiz_6max" | "gtowiz_6max_vs_utg" | "gtowiz_6max_vs_hj" | "gtowiz_6max_vs_co" | "gtowiz_6max_vs_btn" | "gtowiz_6max_vs_sb" | "gtowiz_6max_vs_3bet" | "gtowiz_6max_vs_4bet";
 
 export interface ModeInfo {
   id: Mode;
@@ -102,6 +138,20 @@ export const MODES: ModeInfo[] = [
     short: "vs SB",
     desc: "SBオープンに対するBBのアクション",
     ranges: GTOWIZ_6MAX_VS_SB,
+  },
+  {
+    id: "gtowiz_6max_vs_3bet",
+    label: "GTO Wizard（6-max）vs 3bet",
+    short: "vs 3bet",
+    desc: "オープナーが3betに直面するスポット（fold/call/4bet）",
+    ranges: GTOWIZ_6MAX_VS_3BET,
+  },
+  {
+    id: "gtowiz_6max_vs_4bet",
+    label: "GTO Wizard（6-max）vs 4bet",
+    short: "vs 4bet",
+    desc: "3bettorが4betに直面するスポット（fold/call/5bet）",
+    ranges: GTOWIZ_6MAX_VS_4BET,
   },
   {
     id: "yokosawa",
