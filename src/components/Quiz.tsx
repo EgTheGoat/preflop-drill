@@ -119,7 +119,15 @@ export function Quiz() {
       <PositionFilter />
 
       <div className="ask">
-        <TableDiagram active={range.position} raiser={raiser} order={order} />
+        <TableDiagram
+          active={range.position}
+          raiser={raiser}
+          raiserLabel={
+            range.scenario.includes("4bet") ? "4BET" :
+            range.scenario.includes("3bet") ? "3BET" : "RAISE"
+          }
+          order={order}
+        />
 
         <div className="hole-cards">
           <PlayingCard card={cards[0]} />

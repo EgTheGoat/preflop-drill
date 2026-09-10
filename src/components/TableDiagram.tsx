@@ -24,10 +24,11 @@ function slotFor(offset: number, n: number): { left: number; top: number } {
 interface Props {
   active: Position; // ヒーロー席
   raiser?: Position | null;
+  raiserLabel?: string; // レイザーのアクション表示（RAISE / 3BET / 4BET）
   order?: Position[]; // 席順（BB が最後）。省略時は 6-max。
 }
 
-export function TableDiagram({ active, raiser, order = SIX_MAX_ORDER }: Props) {
+export function TableDiagram({ active, raiser, raiserLabel = "RAISE", order = SIX_MAX_ORDER }: Props) {
   const heroIdx = order.indexOf(active);
 
   return (
@@ -58,7 +59,7 @@ export function TableDiagram({ active, raiser, order = SIX_MAX_ORDER }: Props) {
             <span className="seat-pos">{POSITION_LABEL[pos]}</span>
             {pos === "BTN" && <span className="dealer-btn">D</span>}
             <span className="seat-sub">
-              {isHero ? "YOU" : isRaiser ? "RAISE" : folded ? "FOLD" : "100bb"}
+              {isHero ? "YOU" : isRaiser ? raiserLabel : folded ? "FOLD" : "100bb"}
             </span>
           </div>
         );
