@@ -19,29 +19,27 @@ export function Feedback({ range, hand, result }: Props) {
 
   return (
     <div className={`result ${result.correct ? "ok" : "ng"}`}>
-      <div className="result-row">
-        <div className="result-bar">
-          {parts.map(
-            (p) =>
-              p.f > 0 && (
-                <span
-                  key={p.a}
-                  style={{ height: `${p.f * 100}%`, background: ACTION_COLORS[p.a] }}
-                />
-              ),
-          )}
-        </div>
-        <span className="freqs">
-          {parts.map((p) => (
-            <span
-              key={p.a}
-              className="freq"
-              style={{ color: p.a === "fold" ? "var(--muted)" : ACTION_COLORS[p.a] }}
-            >
-              {ACTION_BUTTON_LABELS[p.a].split(" ")[0]} {Math.round(p.f * 100)}%
-            </span>
-          ))}
-        </span>
+      <div className="freq-bar">
+        {parts.map(
+          (p) =>
+            p.f > 0 && (
+              <span
+                key={p.a}
+                style={{ width: `${p.f * 100}%`, background: ACTION_COLORS[p.a] }}
+              />
+            ),
+        )}
+      </div>
+      <div className="freqs">
+        {parts.map((p) => (
+          <span
+            key={p.a}
+            className="freq"
+            style={{ color: p.a === "fold" ? "var(--muted)" : ACTION_COLORS[p.a] }}
+          >
+            {ACTION_BUTTON_LABELS[p.a].split(" ")[0]} {Math.round(p.f * 100)}%
+          </span>
+        ))}
       </div>
     </div>
   );
