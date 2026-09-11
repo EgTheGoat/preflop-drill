@@ -29,7 +29,7 @@ const TABS: { id: View; label: string; icon: JSX.Element }[] = [
   },
   {
     id: "chart",
-    label: "レンジ表",
+    label: "トナメレンジ表",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor" stroke="none" />
