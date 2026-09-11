@@ -126,6 +126,7 @@ export function Quiz() {
             range.scenario.includes("4bet") ? "4BET" :
             range.scenario.includes("3bet") ? "3BET" : "RAISE"
           }
+          headsUp={range.scenario.includes("3bet") || range.scenario.includes("4bet")}
           order={order}
         />
 

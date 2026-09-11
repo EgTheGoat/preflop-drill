@@ -25,10 +25,11 @@ interface Props {
   active: Position; // ヒーロー席
   raiser?: Position | null;
   raiserLabel?: string; // レイザーのアクション表示（RAISE / 3BET / 4BET）
+  headsUp?: boolean;   // true のとき：ヒーロー・レイザー以外全員 FOLD 表示
   order?: Position[]; // 席順（BB が最後）。省略時は 6-max。
 }
 
-export function TableDiagram({ active, raiser, raiserLabel = "RAISE", order = SIX_MAX_ORDER }: Props) {
+export function TableDiagram({ active, raiser, raiserLabel = "RAISE", headsUp = false, order = SIX_MAX_ORDER }: Props) {
   const heroIdx = order.indexOf(active);
 
   return (
@@ -42,8 +43,9 @@ export function TableDiagram({ active, raiser, raiserLabel = "RAISE", order = SI
         const slot = slotFor(offset, order.length);
         const isHero = pos === active;
         const isRaiser = pos === raiser && !isHero;
-        // ヒーローより前に行動した席（レイザー以外）は降りている扱い。
-        const folded = !isHero && !isRaiser && idx < heroIdx;
+        // headsUp: ヒーロー・レイザー以外は全員 FOLD（vs 3bet/4bet スポット用）
+        // 通常: ヒーローより前に行動した席（レイザー以外）が FOLD
+        const folded = !isHero && !isRaiser && (headsUp || idx < heroIdx);
 
         const cls = [
           "seat",
