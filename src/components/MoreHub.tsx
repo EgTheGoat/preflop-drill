@@ -34,6 +34,21 @@ const SECTIONS: HubSection[] = [
           100bb キャッシュの RFI（オープンレイズするか）。6-max と 9-max を切り替えられます。
           各ハンドは頻度つきの混合戦略で、表には頻度バーが出ます。
         </dd>
+        <dt>vs open（vs UTG / vs HJ / …）</dt>
+        <dd>
+          オープンレイズに対してポジションごとのアクション（fold / call / 3bet）を出題します。
+          出題ハンドは各ポジションの 3bet レンジ範囲から選ばれます。
+        </dd>
+        <dt>vs 3bet</dt>
+        <dd>
+          オープナーが 3bet に直面したときのアクション（fold / call / 4bet）を出題します。
+          出題ハンドはオープナーの RFI レンジから選ばれます。
+        </dd>
+        <dt>vs 4bet</dt>
+        <dd>
+          3bettor が 4bet に直面したときのアクション（fold / call / 5bet）を出題します。
+          出題ハンドは 3bettor の 3bet レンジから選ばれます。
+        </dd>
       </dl>
     ),
   },
@@ -59,7 +74,7 @@ const SECTIONS: HubSection[] = [
     body: (
       <dl className="hub-faq">
         <dt>席（ポジション）は選べますか？</dt>
-        <dd>選べません。モードだけ選び、席は出題ごとにランダムです。</dd>
+        <dd>出題画面上部のポジションフィルターで自分のポジションを絞り込めます。絞り込まない場合は毎回ランダムです。</dd>
         <dt>モードを変えると成績はどうなりますか？</dt>
         <dd>成績はリセットされ、新しい問題が出題されます。</dd>
         <dt>オフラインで使えますか？</dt>
@@ -82,7 +97,7 @@ export function MoreHub() {
 
       <div className="hub-sections">
         {SECTIONS.map((s) => (
-          <details key={s.title} className="hub-section">
+          <details key={s.title} className="hub-section" open={s.title === "使い方"}>
             <summary>{s.title}</summary>
             <div className="hub-section-body">{s.body}</div>
           </details>
@@ -90,7 +105,11 @@ export function MoreHub() {
       </div>
 
       <p className="hub-credit">
-        ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。 GTOレンジは教科書的な自作サンプルです。
+        Preflop Trainer © 2026 EgTheGoat
+      </p>
+      <p className="hub-credit">
+        ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。<br />
+        GTOレンジは教科書的なサンプルです。
         本アプリは学習用で、出典各位とは無関係です。
       </p>
     </div>
