@@ -18,11 +18,9 @@ const FOLD_IN_RANGE_COLOR = "#3D7DB8";
 
 /** 戦略を「左から行動、右に fold」の横グラデーション background にする。 */
 function cellBackground(range: Range, hand: string): string {
-  // range.hands に fold:1.0 として明示されているハンド = 親レンジ内の純 fold 手 → 青
-  const explicit = range.hands[hand as keyof typeof range.hands];
-  if (explicit && Object.keys(explicit).every((k) => k === "fold")) {
-    return FOLD_IN_RANGE_COLOR;
-  }
+  const inRange = hand in range.hands;
+  // range.hands に存在しないハンド（親レンジ外）→ 黒一色
+  const foldColor = inRange ? FOLD_IN_RANGE_COLOR : ACTION_COLORS.fold;
 
   const strat = getStrategy(range, hand);
   const stops: string[] = [];
@@ -34,11 +32,10 @@ function cellBackground(range: Range, hand: string): string {
     const from = acc * 100;
     acc += freq;
     const to = acc * 100;
-    const color = ACTION_COLORS[action];
+    const color = action === "fold" ? foldColor : ACTION_COLORS[action];
     stops.push(`${color} ${from}%, ${color} ${to}%`);
   }
-  // range.hands に存在しないハンド（親レンジ外）→ 黒のまま
-  if (stops.length === 0) stops.push(`${ACTION_COLORS.fold} 0%, ${ACTION_COLORS.fold} 100%`);
+  if (stops.length === 0) stops.push(`${foldColor} 0%, ${foldColor} 100%`);
   return `linear-gradient(to right, ${stops.join(", ")})`;
 }
 
