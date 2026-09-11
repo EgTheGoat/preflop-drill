@@ -21,14 +21,10 @@ import {
   type Range,
 } from "../types/range";
 
-// レイザー検索用の全ポジション候補。長さの降順にして "UTG" が "UTG1"/"UTG2" に誤マッチしないようにする。
-const POSITIONS: Position[] = [...new Set([...NINE_MAX_ORDER, ...SIX_MAX_ORDER])].sort(
-  (a, b) => b.length - a.length,
-);
-
-/** シナリオ文字列（例 "vs BTN オープン"）から相手レイザーの席を取り出す。 */
-function raiserFromScenario(scenario: string, hero: Position): Position | null {
-  return POSITIONS.find((p) => p !== hero && scenario.includes(p)) ?? null;
+/** シナリオ文字列（例 "vs BTN オープン"）から相手レイザーの席を取り出す。
+ *  6-max の MP は POSITION_LABEL で "HJ" と表示されるため、ラベルでも照合する。 */
+function raiserFromScenario(scenario: string, hero: Position, order: Position[]): Position | null {
+  return order.find((p) => p !== hero && (scenario.includes(p) || scenario.includes(POSITION_LABEL[p]))) ?? null;
 }
 
 /** モードに応じたテーブル席順。 */
@@ -102,7 +98,7 @@ export function Quiz() {
   const order = orderForMode(mode);
   // 後ろの人数はテーブルサイズ依存なので席順から算出する（UTG は 6-max=5 / 9-max=8）。
   const playersBehind = order.length - 1 - order.indexOf(range.position);
-  const raiser = raiserFromScenario(range.scenario, range.position);
+  const raiser = raiserFromScenario(range.scenario, range.position, order);
   const bestLabel = lastResult ? actionLabel(lastResult.best, range) : "";
   // 解説はティア理論で説明できるヨコサワ系のみ。GTO は下の頻度表示に任せる。
   const explanation =
