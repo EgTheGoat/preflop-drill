@@ -18,11 +18,13 @@ PWA 対応でオフライン動作可能。
 | **vs CO** | 6-max NL25 100bb | CO オープンに対する BTN/SB/BB のアクション |
 | **vs BTN** | 6-max NL25 100bb | BTN オープンに対する SB/BB のアクション |
 | **vs SB** | 6-max NL25 100bb | SB オープンに対する BB のアクション |
+| **vs 3bet** | 6-max NL25 100bb | オープナーが 3bet に直面（fold/call/4bet）|
+| **vs 4bet** | 6-max NL25 100bb | 3bettor が 4bet に直面（fold/call/5bet）|
 | **ヨコサワ（トーナメント）** | 9-max | オープン / vsレイズ（コール・3bet） |
 
 
 <div align="center">
-  <img width="320" alt="IMG_2407" src="https://github.com/user-attachments/assets/7065586c-7714-4361-8f70-2ac20753c0b3" />
+  <img width="320" alt="IMG_2407" src="https://github.com/user-attachments/assets/05ef6767-42d9-4ae5-88c9-63f2ee38ceaf" />
 </div>
 
 ## インストール（PWA）

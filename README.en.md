@@ -18,11 +18,13 @@ PWA-enabled — works offline.
 | **vs CO** | 6-max NL25 100bb cash | BTN/SB/BB action facing a CO open |
 | **vs BTN** | 6-max NL25 100bb cash | SB/BB action facing a BTN open |
 | **vs SB** | 6-max NL25 100bb cash | BB action facing a SB open |
+| **vs 3bet** | 6-max NL25 100bb cash | Opener facing a 3-bet (fold/call/4-bet) |
+| **vs 4bet** | 6-max NL25 100bb cash | 3-bettor facing a 4-bet (fold/call/5-bet) |
 | **Yokosawa (Tournament)** | 9-max | Open / vs raise (call or 3-bet) |
 
 
 <div align="center">
-  <img width="320" alt="preflop-drill screenshot" src="https://github.com/user-attachments/assets/7065586c-7714-4361-8f70-2ac20753c0b3" />
+  <img width="320" alt="preflop-drill screenshot" src="https://github.com/user-attachments/assets/05ef6767-42d9-4ae5-88c9-63f2ee38ceaf" />
 </div>
 
 ## Install (PWA)
