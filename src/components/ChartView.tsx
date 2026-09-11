@@ -17,7 +17,7 @@ export function ChartView() {
     <div className="chart-view">
       <h2 className="chart-title">ヨコサワ オープンレンジ表</h2>
       <RangeGrid range={DUMMY_RANGE} tierColored />
-      <TierLegend defaultOpen />
+      <TierLegend />
     </div>
   );
 }
