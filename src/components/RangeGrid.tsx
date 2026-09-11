@@ -13,8 +13,17 @@ interface Props {
   tierColored?: boolean;
 }
 
+/** 親レンジから残ったが fold するハンドの色（vs 3bet/4bet スポット用）。 */
+const FOLD_IN_RANGE_COLOR = "#3D7DB8";
+
 /** 戦略を「左から行動、右に fold」の横グラデーション background にする。 */
 function cellBackground(range: Range, hand: string): string {
+  // range.hands に fold:1.0 として明示されているハンド = 親レンジ内の純 fold 手 → 青
+  const explicit = range.hands[hand as keyof typeof range.hands];
+  if (explicit && Object.keys(explicit).every((k) => k === "fold")) {
+    return FOLD_IN_RANGE_COLOR;
+  }
+
   const strat = getStrategy(range, hand);
   const stops: string[] = [];
   let acc = 0;
@@ -28,6 +37,7 @@ function cellBackground(range: Range, hand: string): string {
     const color = ACTION_COLORS[action];
     stops.push(`${color} ${from}%, ${color} ${to}%`);
   }
+  // range.hands に存在しないハンド（親レンジ外）→ 黒のまま
   if (stops.length === 0) stops.push(`${ACTION_COLORS.fold} 0%, ${ACTION_COLORS.fold} 100%`);
   return `linear-gradient(to right, ${stops.join(", ")})`;
 }
