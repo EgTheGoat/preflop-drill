@@ -82,20 +82,40 @@ npm run build  # 本番ビルド → dist/
 
 ```
 src/
-├── components/     # UI コンポーネント（Quiz, RangeGrid, TableDiagram など）
+├── App.tsx
+├── main.tsx
+├── index.css
+├── components/
+│   ├── Quiz.tsx          # 出題メイン（テーブル図・ハンド・ボタン・回答モーダル）
+│   ├── ActionButtons.tsx # fold/call/raise ボタン
+│   ├── BottomNav.tsx     # 下部タブナビ
+│   ├── ChartPopover.tsx  # その他タブのレンジ表ポップオーバー
+│   ├── ChartView.tsx     # レンジ表単独ページ
+│   ├── Feedback.tsx      # 回答後の頻度バー
+│   ├── ModeSwitch.tsx    # モード切替
+│   ├── MoreHub.tsx       # その他タブ
+│   ├── PlayingCard.tsx   # カード画像
+│   ├── PositionFilter.tsx# ポジション絞り込みフィルター
+│   ├── RangeGrid.tsx     # 169ハンドのレンジグリッド
+│   ├── SessionStats.tsx  # セッション成績・履歴
+│   ├── TableDiagram.tsx  # テーブル図
+│   └── TierLegend.tsx    # ヨコサワ色の凡例
 ├── data/
-│   ├── ranges/     # レンジデータ（JSON）
-│   ├── yokosawa.ts # ヨコサワモードのレンジ定義
-│   └── yokosawaChart.ts / yokosawaVs.ts
+│   ├── ranges/           # レンジデータ（JSON）
+│   ├── ranges.ts         # モード定義・レンジ一覧
+│   ├── yokosawa.ts       # ヨコサワオープンレンジ定義
+│   ├── yokosawaChart.ts  # ヨコサワレンジ表（ティア配色）
+│   └── yokosawaVs.ts     # ヨコサワ vsレイズレンジ
 ├── lib/
-│   ├── hands.ts    # ハンドのランダム生成・表記変換
-│   ├── scoring.ts  # 採点ロジック
-│   ├── trainer.ts  # 出題フロー制御
-│   └── explain.ts  # 回答解説テキスト生成
+│   ├── cards.ts          # カード生成ユーティリティ
+│   ├── explain.ts        # 回答解説テキスト生成
+│   ├── hands.ts          # ハンドのランダム生成・表記変換
+│   ├── scoring.ts        # 採点ロジック
+│   └── trainer.ts        # 出題フロー制御
 ├── store/
-│   └── session.ts  # Zustand セッションストア（スコア・履歴）
+│   └── session.ts        # Zustand セッションストア（スコア・履歴）
 └── types/
-    └── range.ts    # Range / Action / Position 型定義
+    └── range.ts          # Range / Action / Position 型定義
 ```
 
 ## Contributing

@@ -82,20 +82,40 @@ npm run build  # production build → dist/
 
 ```
 src/
-├── components/     # UI components (Quiz, RangeGrid, TableDiagram, …)
+├── App.tsx
+├── main.tsx
+├── index.css
+├── components/
+│   ├── Quiz.tsx           # Main quiz view (table diagram, hand, buttons, result modal)
+│   ├── ActionButtons.tsx  # fold/call/raise buttons
+│   ├── BottomNav.tsx      # Bottom tab navigation
+│   ├── ChartPopover.tsx   # Range chart popover in More tab
+│   ├── ChartView.tsx      # Standalone range chart page
+│   ├── Feedback.tsx       # Post-answer frequency bar
+│   ├── ModeSwitch.tsx     # Mode selector
+│   ├── MoreHub.tsx        # More tab
+│   ├── PlayingCard.tsx    # Card display
+│   ├── PositionFilter.tsx # Position filter
+│   ├── RangeGrid.tsx      # 169-hand range grid
+│   ├── SessionStats.tsx   # Session stats & history
+│   ├── TableDiagram.tsx   # Table diagram
+│   └── TierLegend.tsx     # Yokosawa tier color legend
 ├── data/
-│   ├── ranges/     # Range data (JSON)
-│   ├── yokosawa.ts # Yokosawa mode range definitions
-│   └── yokosawaChart.ts / yokosawaVs.ts
+│   ├── ranges/            # Range data (JSON)
+│   ├── ranges.ts          # Mode definitions & range list
+│   ├── yokosawa.ts        # Yokosawa open range definitions
+│   ├── yokosawaChart.ts   # Yokosawa range chart (tier colors)
+│   └── yokosawaVs.ts      # Yokosawa vs-raise ranges
 ├── lib/
-│   ├── hands.ts    # Hand generation & notation conversion
-│   ├── scoring.ts  # Grading logic
-│   ├── trainer.ts  # Question generation
-│   └── explain.ts  # Answer explanation text
+│   ├── cards.ts           # Card generation utilities
+│   ├── explain.ts         # Answer explanation text
+│   ├── hands.ts           # Hand generation & notation conversion
+│   ├── scoring.ts         # Grading logic
+│   └── trainer.ts         # Question generation
 ├── store/
-│   └── session.ts  # Zustand session store (stats & history)
+│   └── session.ts         # Zustand session store (stats & history)
 └── types/
-    └── range.ts    # Range / Action / Position type definitions
+    └── range.ts           # Range / Action / Position type definitions
 ```
 
 ## Contributing
