@@ -105,9 +105,6 @@ export function MoreHub() {
       </div>
 
       <p className="hub-credit">
-        Preflop Trainer © 2026 EgTheGoat
-      </p>
-      <p className="hub-credit">
         ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。<br />
         GTOレンジは教科書的なサンプルです。
         本アプリは学習用で、出典各位とは無関係です。
