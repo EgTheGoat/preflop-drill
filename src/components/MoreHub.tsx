@@ -103,7 +103,7 @@ export function MoreHub() {
 
       <p className="hub-credit">
         ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。<br />
-        GTOレンジは教科書的なサンプルです。
+        GTOレンジは近似解の一例です。
         本アプリは学習用で、出典各位とは無関係です。
       </p>
     </div>

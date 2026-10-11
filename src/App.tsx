@@ -56,7 +56,7 @@ export default function App() {
       </main>
 
       <footer className="app-footer">
-        ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。 GTOレンジは教科書的な自作サンプル。
+        ヨコサワレンジ © 世界のヨコサワ（学習目的で参照）。 GTOレンジは近似解の一例です。
       </footer>
 
       <BottomNav view={view} onChange={setView} />
