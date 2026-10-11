@@ -1,11 +1,11 @@
 // 「その他」ハブ。回遊の入口としてのリンク群＋アプリの使い方/解説をまとめる。
 // 外側はカードで包まず、リンクカードと折りたたみセクションを直接並べる。
 
-import React from "react";
+import type { ReactNode } from "react";
 
 interface HubSection {
   title: string;
-  body: React.ReactNode;
+  body: ReactNode;
 }
 
 const SECTIONS: HubSection[] = [
