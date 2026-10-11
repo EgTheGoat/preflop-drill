@@ -20,7 +20,7 @@ export default function App() {
       <header className="app-header">
         <div className="app-header-inner">
           <button className="app-header-brand" onClick={() => setView("train")}>
-            <img src="/icon.svg" alt="" className="app-header-icon" />
+            <img src="/pf_icon.png" alt="" className="app-header-icon" />
             Preflop Trainer
           </button>
           <nav className="app-header-nav">
