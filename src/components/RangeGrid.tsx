@@ -1,9 +1,10 @@
 // 13x13 ハンドグリッド。
 // 通常(GTO)はアクション混合頻度のヒートマップ。tierColored 時はヨコサワ表のティア配色。
 
+import { useState } from "react";
 import { allHandCells } from "../lib/hands";
 import { getStrategy } from "../lib/scoring";
-import { ACTION_COLORS, type Range } from "../types/range";
+import { ACTION_BUTTON_LABELS, ACTION_COLORS, type Range } from "../types/range";
 import { yokosawaColor } from "../data/yokosawaChart";
 
 interface Props {
@@ -50,22 +51,74 @@ function textColorFor(hex: string): string {
 
 export function RangeGrid({ range, highlightHand, tierColored }: Props) {
   const cells = allHandCells();
+  const [hoveredHand, setHoveredHand] = useState<string | null>(null);
+
+  const ordered = [...range.actions].sort((a, b) => (a === "fold" ? 1 : b === "fold" ? -1 : 0));
+  const hoverStrat = hoveredHand ? getStrategy(range, hoveredHand) : null;
+  const parts = hoverStrat ? ordered.map((a) => ({ a, f: hoverStrat[a] ?? 0 })) : [];
+
   return (
-    <div className={`range-grid${tierColored ? " tier" : ""}`}>
-      {cells.map((c) => {
-        const isHi = highlightHand === c.hand;
-        const style: React.CSSProperties = tierColored
-          ? (() => {
-              const bg = yokosawaColor(c.hand);
-              return { background: bg, color: textColorFor(bg) };
-            })()
-          : { background: cellBackground(range, c.hand) };
-        return (
-          <div key={c.hand} className={`grid-cell${isHi ? " hi" : ""}`} style={style} title={c.hand}>
-            <span>{c.hand}</span>
-          </div>
-        );
-      })}
+    <div className={`range-grid-wrap${tierColored ? " tier" : ""}`}>
+      <div
+        className="range-grid"
+        onMouseLeave={() => setHoveredHand(null)}
+      >
+        {cells.map((c) => {
+          const isHi = highlightHand === c.hand;
+          const style: React.CSSProperties = tierColored
+            ? (() => {
+                const bg = yokosawaColor(c.hand);
+                return { background: bg, color: textColorFor(bg) };
+              })()
+            : { background: cellBackground(range, c.hand) };
+          return (
+            <div
+              key={c.hand}
+              className={`grid-cell${isHi ? " hi" : ""}`}
+              style={style}
+              title={c.hand}
+              onMouseEnter={() => setHoveredHand(c.hand)}
+            >
+              <span>{c.hand}</span>
+            </div>
+          );
+        })}
+      </div>
+
+      {!tierColored && (
+        <div className={`grid-hover-panel${hoveredHand ? " visible" : ""}`}>
+          {hoveredHand && hoverStrat ? (
+            <>
+              <span className="grid-hover-hand">{hoveredHand}</span>
+              <div className="grid-hover-freq-col">
+                <div className="freq-bar">
+                  {parts.map((p) =>
+                    p.f > 0 ? (
+                      <span
+                        key={p.a}
+                        style={{ width: `${p.f * 100}%`, background: ACTION_COLORS[p.a] }}
+                      />
+                    ) : null,
+                  )}
+                </div>
+                <div className="freqs">
+                  {parts.map((p) => (
+                    <span
+                      key={p.a}
+                      className="freq"
+                      style={{ color: p.a === "fold" ? "var(--muted)" : ACTION_COLORS[p.a] }}
+                    >
+                      {ACTION_BUTTON_LABELS[p.a].split(" ")[0]} {Math.round(p.f * 100)}%
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            <span className="grid-hover-placeholder">ハンドにマウスを乗せると頻度を表示</span>
+          )}
+        </div>
+      )}
     </div>
   );
 }
