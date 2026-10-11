@@ -84,6 +84,8 @@ body {
 .app-header-nav-btn.on {
   background: var(--bg-2);
   color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .app-header-nav-btn:hover:not(.on) {
   color: var(--text);
@@ -1253,6 +1255,12 @@ body {
 }
 .hub-section-body b {
   color: var(--text);
+}
+.hub-intro {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
 }
 .hub-steps {
   margin: 0;
