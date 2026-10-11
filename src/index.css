@@ -1204,6 +1204,52 @@ body {
   color: var(--muted);
   letter-spacing: 0.5px;
 }
+.chart-tab-toggle {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.chart-tab-toggle button {
+  flex: 1;
+  padding: 7px 0;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.chart-tab-toggle button.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.chart-mode-btns,
+.chart-range-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.chart-mode-btns button,
+.chart-range-btns button {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.chart-mode-btns button.on,
+.chart-range-btns button.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
 
 /* ================= chart popover (PC サイドバー用) ================= */
 .chart-popover {
