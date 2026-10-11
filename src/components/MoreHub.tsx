@@ -1,7 +1,6 @@
 // 「その他」ハブ。回遊の入口としてのリンク群＋アプリの使い方/解説をまとめる。
 // 外側はカードで包まず、リンクカードと折りたたみセクションを直接並べる。
 
-import { ChartPopover } from "./ChartPopover";
 
 interface HubSection {
   title: string;
@@ -88,12 +87,6 @@ export function MoreHub() {
   return (
     <div className="more-hub">
       <h3>その他</h3>
-
-      <ul className="hub-list">
-        <li>
-          <ChartPopover />
-        </li>
-      </ul>
 
       <div className="hub-sections">
         {SECTIONS.map((s) => (

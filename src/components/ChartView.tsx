@@ -16,6 +16,12 @@ const YOKOSAWA_DUMMY: Range = {
 
 const GTO_MODES = MODES.filter((m) => !m.id.startsWith("yokosawa"));
 
+function formatRangeLabel(label: string): string {
+  const vsIdx = label.indexOf(" vs ");
+  if (vsIdx === -1) return label;
+  return `${label.slice(0, vsIdx)} (${label.slice(vsIdx + 1)})`;
+}
+
 export function ChartView() {
   const [tab, setTab] = useState<"yokosawa" | "gto">("gto");
   const [gtoModeId, setGtoModeId] = useState<Mode>(GTO_MODES[0].id);
@@ -32,48 +38,59 @@ export function ChartView() {
 
   return (
     <div className="chart-view">
-      <div className="chart-tab-toggle">
-        <button className={tab === "gto" ? "on" : ""} onClick={() => setTab("gto")}>
-          GTO
-        </button>
-        <button className={tab === "yokosawa" ? "on" : ""} onClick={() => setTab("yokosawa")}>
-          ヨコサワ
-        </button>
-      </div>
+      <div className="chart-layout">
+        {/* 左: 選択パネル */}
+        <div className="chart-sidebar">
+          <div className="chart-tab-toggle">
+            <button className={tab === "gto" ? "on" : ""} onClick={() => setTab("gto")}>
+              GTO
+            </button>
+            <button className={tab === "yokosawa" ? "on" : ""} onClick={() => setTab("yokosawa")}>
+              ヨコサワ
+            </button>
+          </div>
 
-      {tab === "yokosawa" ? (
-        <>
-          <h2 className="chart-title">ヨコサワ オープンレンジ表</h2>
-          <RangeGrid range={YOKOSAWA_DUMMY} tierColored />
-          <TierLegend />
-        </>
-      ) : (
-        <>
-          <div className="chart-mode-btns">
-            {GTO_MODES.map((m) => (
-              <button
-                key={m.id}
-                className={gtoModeId === m.id ? "on" : ""}
-                onClick={() => switchGtoMode(m.id)}
-              >
-                {m.short}
-              </button>
-            ))}
-          </div>
-          <div className="chart-range-btns">
-            {gtoMode.ranges.map((r) => (
-              <button
-                key={r.id}
-                className={selectedRange.id === r.id ? "on" : ""}
-                onClick={() => setSelectedRangeId(r.id)}
-              >
-                {r.label}
-              </button>
-            ))}
-          </div>
-          <RangeGrid range={selectedRange} />
-        </>
-      )}
+          {tab === "gto" && (
+            <>
+              <div className="chart-mode-btns">
+                {GTO_MODES.map((m) => (
+                  <button
+                    key={m.id}
+                    className={gtoModeId === m.id ? "on" : ""}
+                    onClick={() => switchGtoMode(m.id)}
+                  >
+                    {m.short}
+                  </button>
+                ))}
+              </div>
+              <div className="chart-range-btns">
+                {gtoMode.ranges.map((r) => (
+                  <button
+                    key={r.id}
+                    className={selectedRange.id === r.id ? "on" : ""}
+                    onClick={() => setSelectedRangeId(r.id)}
+                  >
+                    {formatRangeLabel(r.label)}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+
+          {tab === "yokosawa" && (
+            <TierLegend defaultOpen />
+          )}
+        </div>
+
+        {/* 右: レンジグリッド */}
+        <div className="chart-main">
+          {tab === "yokosawa" ? (
+            <RangeGrid range={YOKOSAWA_DUMMY} tierColored />
+          ) : (
+            <RangeGrid range={selectedRange} />
+          )}
+        </div>
+      </div>
     </div>
   );
 }

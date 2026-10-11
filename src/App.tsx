@@ -5,11 +5,39 @@ import { MoreHub } from "./components/MoreHub";
 import { ChartView } from "./components/ChartView";
 import { BottomNav, type View } from "./components/BottomNav";
 
+const NAV_ITEMS: { id: View; label: string }[] = [
+  { id: "train", label: "練習" },
+  { id: "chart", label: "レンジ表" },
+  { id: "stats", label: "履歴" },
+  { id: "more", label: "その他" },
+];
+
 export default function App() {
   const [view, setView] = useState<View>("train");
 
   return (
-    <div className="app" data-view={view}>
+    <>
+      <header className="app-header">
+        <div className="app-header-inner">
+          <button className="app-header-brand" onClick={() => setView("train")}>
+            <img src="/icon.svg" alt="" className="app-header-icon" />
+            Preflop Trainer
+          </button>
+          <nav className="app-header-nav">
+            {NAV_ITEMS.map((item) => (
+              <button
+                key={item.id}
+                className={`app-header-nav-btn${view === item.id ? " on" : ""}`}
+                onClick={() => setView(item.id)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <div className="app" data-view={view}>
       <main className="layout">
         <section className="pane pane-train col-main">
           <Quiz />
@@ -32,6 +60,7 @@ export default function App() {
       </footer>
 
       <BottomNav view={view} onChange={setView} />
-    </div>
+      </div>
+    </>
   );
 }
