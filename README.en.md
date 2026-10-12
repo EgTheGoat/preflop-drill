@@ -12,7 +12,7 @@ PWA-enabled — works offline.
 
 | Mode | Table | Scenario |
 |---|---|---|
-| **GTOWiz RFI** | 6-max NL25 100bb cash | RFI (open or fold) |
+| **GTO RFI** | 6-max NL25 100bb cash | RFI (open or fold) |
 | **vs UTG** | 6-max NL25 100bb cash | HJ/CO/BTN/SB/BB action facing a UTG open |
 | **vs HJ** | 6-max NL25 100bb cash | CO/BTN/SB/BB action facing a HJ open |
 | **vs CO** | 6-max NL25 100bb cash | BTN/SB/BB action facing a CO open |
@@ -130,7 +130,7 @@ See the `Range` type in `src/types/range.ts` for the schema.
 ```ts
 // Minimal example
 {
-  "id": "gtowiz_6max_vs_utg_bb",
+  "id": "gto_6max_vs_utg_bb",
   "label": "BB vs UTG Open",
   "format": "6-max 100bb",
   "position": "BB",

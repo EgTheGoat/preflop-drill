@@ -12,7 +12,7 @@ PWA 対応でオフライン動作可能。
 
 | モード | テーブル | シナリオ |
 |---|---|---|
-| **GTOWiz RFI** | 6-max NL25 100bb | RFI（オープンするか）|
+| **GTO RFI** | 6-max NL25 100bb | RFI（オープンするか）|
 | **vs UTG** | 6-max NL25 100bb | UTG オープンに対する HJ/CO/BTN/SB/BB のアクション |
 | **vs HJ** | 6-max NL25 100bb | HJ オープンに対する CO/BTN/SB/BB のアクション |
 | **vs CO** | 6-max NL25 100bb | CO オープンに対する BTN/SB/BB のアクション |
@@ -130,7 +130,7 @@ src/
 ```ts
 // 最小構成の例
 {
-  "id": "gtowiz_6max_vs_utg_bb",
+  "id": "gto_6max_vs_utg_bb",
   "label": "BB vs UTG オープン",
   "format": "6-max 100bb",
   "position": "BB",
