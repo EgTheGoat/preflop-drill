@@ -1,0 +1,13 @@
+// Cloudflare Workers の静的アセット配信設定。
+// これが無いと `wrangler deploy` が自動セットアップ（npm install 等）を走らせて失敗するため明示する。
+{
+  "name": "preflop-drill",
+  "compatibility_date": "2026-10-12",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
