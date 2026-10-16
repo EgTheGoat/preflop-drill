@@ -18,7 +18,7 @@ export default defineConfig({
         navigateFallback: "/index.html", // SPA のオフライン時フォールバック
         cleanupOutdatedCaches: true,
       },
-      includeAssets: ["icon.svg", "apple-touch-icon.png"],
+      includeAssets: ["apple-touch-icon.png", "icon-192.png", "icon-512.png", "icon-maskable-512.png"],
       devOptions: {
         enabled: false, // 開発時は SW 無効（キャッシュで混乱しないように）
       },
