@@ -78,14 +78,22 @@ export function ChartView() {
           )}
 
           {tab === "yokosawa" && (
-            <TierLegend defaultOpen />
+            <div className="chart-legend-pc">
+              <TierLegend />
+            </div>
           )}
         </div>
 
         {/* 右: レンジグリッド */}
         <div className="chart-main">
           {tab === "yokosawa" ? (
-            <RangeGrid range={YOKOSAWA_DUMMY} tierColored />
+            <>
+              <RangeGrid range={YOKOSAWA_DUMMY} tierColored />
+              {/* モバイルでは色の説明を表の下に出す */}
+              <div className="chart-legend-mobile">
+                <TierLegend />
+              </div>
+            </>
           ) : (
             <RangeGrid range={selectedRange} />
           )}

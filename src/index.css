@@ -1332,6 +1332,14 @@ body {
   .chart-layout {
     display: block;
   }
+  .chart-legend-pc {
+    display: none;
+  }
+}
+@media (min-width: 821px) {
+  .chart-legend-mobile {
+    display: none;
+  }
 }
 .chart-title {
   margin: 0 0 14px;
